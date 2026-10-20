@@ -1,0 +1,48 @@
+name: Deploy portfolio to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        if: hashFiles('generate.py') != ''
+        with:
+          python-version: "3.12"
+      - name: Generate static site when generator source is present
+        if: hashFiles('generate.py') != ''
+        run: python generate.py
+      - name: Stage only files required by the published site
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir -p _site/domains _site/assets/css _site/assets/js
+          cp index.html tools.html 404.html robots.txt sitemap.xml .nojekyll _site/
+          cp domains/*.html _site/domains/
+          cp assets/css/style.css _site/assets/css/
+          cp assets/js/main.js _site/assets/js/
+          cp assets/favicon.svg assets/Manik-Sheokand-CV.pdf _site/assets/
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
