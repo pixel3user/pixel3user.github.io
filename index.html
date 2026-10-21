@@ -30,10 +30,10 @@
 <a href="index.html#education">Education</a>
 <a href="index.html#contact">Contact</a>
 </nav></div></header>
-<div class="hero"><div class="wrap hero-grid">
+<div class="hero"><canvas id="hero-canvas" aria-hidden="true"></canvas><div class="wrap hero-grid">
 <div>
 <h1>Manik Sheokand</h1>
-<p class="role">Computer Science Engineer — Data Science, AI/ML &amp; LLM Evaluation</p>
+<p class="role">Computer Science Engineer — <span id="typed-role" data-roles="Data Science|AI/ML Engineering|LLM Evaluation|Benchmark Design|C++ · Python · PyTorch">Data Science, AI/ML &amp; LLM Evaluation</span><span class="typed-caret" aria-hidden="true"></span></p>
 <p class="lede">Computer science engineer with a strong interest in data science and research experience across Taiwan, the USA, and France. Strong in C++ and Python, machine learning, and data science — with published benchmark work on LLM code generation and hands-on experience evaluating agentic systems on real repositories and terminal workflows.</p>
 <div class="hero-actions">
 <a class="btn" href="assets/Manik-Sheokand-CV.pdf">Download CV (PDF)</a>
@@ -42,10 +42,10 @@
 </div>
 <p class="hero-facts"><span><strong>Base:</strong> Washington DC-Baltimore Area</span><span><strong>Research:</strong> Taiwan · USA · France</span><span><strong>Core:</strong> C++ · Python · PyTorch · LLM evaluation</span></p>
 <div class="stats">
-<div class="stat" style="background:#16283e;border-color:#2a435f"><b style="color:#fff">17</b><span style="color:#9fb2c8">code models benchmarked in open-source LLM evaluation framework</span></div>
-<div class="stat" style="background:#16283e;border-color:#2a435f"><b style="color:#fff">6k+</b><span style="color:#9fb2c8">code-mixed prompts in CodeMixBench (Hinglish, Spanglish, Pinyin-English)</span></div>
-<div class="stat" style="background:#16283e;border-color:#2a435f"><b style="color:#fff">3M</b><span style="color:#9fb2c8">frames collected &amp; augmented for edge sign-language model</span></div>
-<div class="stat" style="background:#16283e;border-color:#2a435f"><b style="color:#fff">9</b><span style="color:#9fb2c8">engineering-software domains surveyed in depth on this site</span></div>
+<div class="stat" style="background:#16283e;border-color:#2a435f"><b style="color:#fff" data-count="17">17</b><span style="color:#9fb2c8">code models benchmarked in open-source LLM evaluation framework</span></div>
+<div class="stat" style="background:#16283e;border-color:#2a435f"><b style="color:#fff" data-count="6" data-suffix="k+">6k+</b><span style="color:#9fb2c8">code-mixed prompts in CodeMixBench (Hinglish, Spanglish, Pinyin-English)</span></div>
+<div class="stat" style="background:#16283e;border-color:#2a435f"><b style="color:#fff" data-count="3" data-suffix="M">3M</b><span style="color:#9fb2c8">frames collected &amp; augmented for edge sign-language model</span></div>
+<div class="stat" style="background:#16283e;border-color:#2a435f"><b style="color:#fff" data-count="9">9</b><span style="color:#9fb2c8">engineering-software domains surveyed in depth on this site</span></div>
 </div></div>
 <aside class="profile-card" aria-label="Profile summary"><h2>At a glance</h2><dl>
 <div><dt>Current role</dt><dd>Software Engineer Specialist — Handshake AI (Remote), since Feb 2026</dd></div>
@@ -54,6 +54,10 @@
 <div><dt>Publication</dt><dd>Evaluating LLMs on Code Generation with Code-Mixed Prompts (2025), arXiv:2505.05063</dd></div>
 <div><dt>Contact</dt><dd><a href="mailto:maniksheokand@gmail.com">maniksheokand@gmail.com</a><br><a href="https://www.linkedin.com/in/manik0108" rel="noopener">linkedin.com/in/manik0108</a></dd></div>
 </dl></aside>
+</div></div>
+<div class="ticker" aria-hidden="true"><div class="ticker-track">
+<span>CodeMixBench ✦ PyTorch ✦ KiCad ✦ STAR-CCM+ ✦ Unreal Engine 5 ✦ Blender ✦ MuJoCo ✦ Drake ✦ DaVinci Resolve ✦ Wwise ✦ Stata ✦ FreeCAD ✦ TensorFlow Lite ✦ LLM Evaluation ✦&nbsp;</span>
+<span>CodeMixBench ✦ PyTorch ✦ KiCad ✦ STAR-CCM+ ✦ Unreal Engine 5 ✦ Blender ✦ MuJoCo ✦ Drake ✦ DaVinci Resolve ✦ Wwise ✦ Stata ✦ FreeCAD ✦ TensorFlow Lite ✦ LLM Evaluation ✦&nbsp;</span>
 </div></div>
 
 <main id="main">
@@ -224,6 +228,7 @@
 <p style="margin-top:10px">Availability, start date, and weekly hours: please ask by email — they are confirmed per engagement rather than stated generically here.</p></div>
 </div></div></section>
 </main>
+<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 <footer class="site-footer"><div class="wrap">
 <div class="footer-grid">
 <div><h2>Manik Sheokand</h2>
@@ -239,7 +244,8 @@
 <li><a href="tools.html">Searchable tools index</a></li>
 <li><a href="index.html#how-to-read">How to read this portfolio</a></li>
 </ul></div></div>
-<p class="smallprint">© <span data-year>2026</span> Manik Sheokand. Profile, education, experience, publications, and certifications are taken from the CV linked above. The nine domain pages present the engineering-software survey files (1.md–9.md) held with this site: tool coverage, equivalents, and representative showcase workflows, with the evidence a reviewer can request for each. Technical visuals are original reconstructions generated in this repository; each caption states what is source-stated, derived, or illustrative.</p>
+<p class="smallprint">© <span data-year>2026</span> Manik Sheokand · Washington DC-Baltimore Area. The nine domain pages present an engineering-software survey — tool coverage, equivalents, and representative showcase workflows, with the evidence a reviewer can request for each. Technical visuals are original reconstructions; each caption states what is source-stated, derived, or illustrative.</p>
 </div></footer>
+<button class="to-top" id="to-top" type="button" aria-label="Back to top">↑</button>
 <script src="assets/js/main.js"></script>
 </body></html>
